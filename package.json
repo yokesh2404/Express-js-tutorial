@@ -1,0 +1,25 @@
+{
+  "name": "expressjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js && npm run build && npm run bundle ",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/babel-cli/bin/babel.js src --out-dir lib --plugins transform-react-jsx --presets es2015",
+    "bundle": "./node_modules/browserify/bin/cmd.js lib/client.js -o public/js/bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "master"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongodb": "^6.5.0",
+    "mongoose": "^8.3.0",
+    "nodemon": "^3.1.0"
+  }
+}
