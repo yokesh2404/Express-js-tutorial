@@ -4,7 +4,12 @@ const app = express();
 var Model = require('../model/index');
 
 const routes = express.Router();
-
+const PayU = require("payu-websdk");
+ 
+const payUClient=new PayU({
+	key:"",
+	salt:""
+},"TEST");
 routes.post('/create', async (req, res) => {
 	const data = new Model({
 		name: req.body.name,
